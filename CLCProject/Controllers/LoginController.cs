@@ -2,7 +2,7 @@
 
 namespace CLCProject.Controllers
 {
-    public class LonginController : Controller
+    public class LoginController : Controller
     {
         public IActionResult Index()
         {
