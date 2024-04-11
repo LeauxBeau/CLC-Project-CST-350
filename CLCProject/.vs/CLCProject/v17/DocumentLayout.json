@@ -3,11 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|c:\\users\\austi\\onedrive\\desktop\\clc-project-cst-350\\clcproject\\views\\longin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|solutionrelative:views\\longin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|c:\\users\\austi\\onedrive\\desktop\\clc-project-cst-350\\clcproject\\controllers\\longincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|solutionrelative:controllers\\longincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|c:\\users\\austi\\onedrive\\desktop\\clc-project-cst-350\\clcproject\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|solutionrelative:models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|c:\\users\\austi\\onedrive\\desktop\\clc-project-cst-350\\clcproject\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|c:\\users\\austi\\onedrive\\desktop\\clc-project-cst-350\\clcproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -24,6 +36,45 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Views\\Longin\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Longin\\Index.cshtml",
+              "ToolTip": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Views\\Longin\\Index.cshtml",
+              "RelativeToolTip": "Views\\Longin\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-11T19:13:27.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Models\\UserModel.cs",
+              "RelativeDocumentMoniker": "Models\\UserModel.cs",
+              "ToolTip": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Models\\UserModel.cs",
+              "RelativeToolTip": "Models\\UserModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T19:11:25.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LonginController.cs",
+              "DocumentMoniker": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Controllers\\LonginController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LonginController.cs",
+              "ToolTip": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Controllers\\LonginController.cs",
+              "RelativeToolTip": "Controllers\\LonginController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T19:10:34.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Views\\Home\\Index.cshtml",
@@ -35,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -43,8 +94,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-11T14:55:18.047Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T14:55:18.047Z"
             }
           ]
         }
