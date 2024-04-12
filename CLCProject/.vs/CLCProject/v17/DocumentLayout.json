@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|c:\\users\\austi\\onedrive\\desktop\\clc-project-cst-350\\clcproject\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|solutionrelative:views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|c:\\users\\austi\\onedrive\\desktop\\clc-project-cst-350\\clcproject\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|solutionrelative:views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,11 +26,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-11T23:34:47.44Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Views\\Login\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Login\\Index.cshtml",
@@ -39,7 +56,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UserModel.cs",
               "DocumentMoniker": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Models\\UserModel.cs",
               "RelativeDocumentMoniker": "Models\\UserModel.cs",
@@ -52,13 +69,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
               "ToolTip": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Controllers\\LoginController.cs",
               "RelativeToolTip": "Controllers\\LoginController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-11T19:10:34.158Z",
               "EditorCaption": ""
