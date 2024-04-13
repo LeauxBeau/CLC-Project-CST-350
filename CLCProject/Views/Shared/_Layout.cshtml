@@ -11,6 +11,7 @@
         body {
             padding-top: 56px;
             padding-bottom: 3rem;
+            background-color: lightskyblue;
         }
 
         .footer {
@@ -27,7 +28,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-white fixed-top">
+        <nav class="navbar navbar-expand-sm navbar-light bg-black fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CLCProject</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -39,14 +40,20 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                                Access
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Login" asp-action="Index">Login</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Registration" asp-action="Index">Register</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Game" asp-action="Index">Game</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Login" asp-action="Index">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Registration" asp-action="Index">Register</a>
                         </li>
                     </ul>
                 </div>
@@ -59,7 +66,7 @@
         </main>
     </div>
 
-    <footer class="footer text-muted">
+    <footer class="footer text-white">
         <div class="container">
             &copy; 2024 - CLCProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
