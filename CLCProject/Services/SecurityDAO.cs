@@ -12,6 +12,9 @@ namespace CLCProject.Services
     {
         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog = Test; Integrated Security = True; Connect Timeout = 30; Encrypt=False;Trust Server Certificate=False;Application Intent = ReadWrite; Multi Subnet Failover=False";
 
+
+        // this is causing the issue with the whole entire ASP.net core issue. What we need to do is to remove it ocmpletely from the project and stop it PLEASE.
+
         public bool FindUserByNameAndPassword(UserModel user)
         {
             bool success = false;
