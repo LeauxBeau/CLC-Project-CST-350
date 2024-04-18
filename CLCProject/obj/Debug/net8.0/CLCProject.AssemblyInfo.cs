@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CLCProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9936828620b6af7cf4ec1e45f59157ae6fc42f73")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+50659203a04d39977754eec153bec8b667322b32")]
 [assembly: System.Reflection.AssemblyProductAttribute("CLCProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CLCProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
