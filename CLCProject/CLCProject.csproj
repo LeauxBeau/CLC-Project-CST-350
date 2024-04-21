@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\GameBoard.cs" />
+    <Compile Remove="Models\GameBoardModel.cs" />
+    <Compile Remove="Services\GameBoardService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Views\Login\RegistrationSuccess.cshtml" />
   </ItemGroup>
 
