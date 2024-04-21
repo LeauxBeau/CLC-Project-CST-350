@@ -79,17 +79,18 @@
                     <form asp-controller="Login" asp-action="ProcessLogin" method="post">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <div class="form-group">
-                            <input asp-for="UserName" class="form-control" placeholder="Username" />
+                            <input asp-for="UserName" class="form-control" placeholder="Username" required />
                             <span asp-validation-for="UserName" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <input asp-for="Password" class="form-control" placeholder="Password" />
+                            <input asp-for="Password" class="form-control" placeholder="Password" required />
                             <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-block">Login</button>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>

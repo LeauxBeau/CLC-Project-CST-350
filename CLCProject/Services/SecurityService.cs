@@ -1,6 +1,4 @@
 ﻿using CLCProject.Models;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace CLCProject.Services
 {
@@ -17,8 +15,10 @@ namespace CLCProject.Services
         {
             return _securityDAO.FindUserByNameAndPassword(user);
         }
+
+        public void SaveUser(RegistrationModel model)
+        {
+            _securityDAO.InsertUser(model);
+        }
     }
 }
-
-    
-
