@@ -1,36 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|c:\\users\\austi\\onedrive\\desktop\\clc-project-cst-350\\clcproject\\views\\registration\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|solutionrelative:views\\registration\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|solutionrelative:views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|solutionrelative:models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\models\\registrationmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|solutionrelative:models\\registrationmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\controllers\\registrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|solutionrelative:controllers\\registrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\services\\securityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C490D8E0-809A-4AA7-B52F-C356925DE03C}|CLCProject.csproj|solutionrelative:services\\securityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\jscap\\Documents\\GitHub\\CLC-Project-CST-350\\CLCProject\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -38,96 +9,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Views\\Registration\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Registration\\Index.cshtml",
-              "ToolTip": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Views\\Registration\\Index.cshtml",
-              "RelativeToolTip": "Views\\Registration\\Index.cshtml",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAwwLIAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-17T00:18:58.268Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Views\\Login\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Login\\Index.cshtml",
-              "ToolTip": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Views\\Login\\Index.cshtml",
-              "RelativeToolTip": "Views\\Login\\Index.cshtml",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAuwGMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-17T00:18:50.631Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserModel.cs",
-              "DocumentMoniker": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Models\\UserModel.cs",
-              "RelativeDocumentMoniker": "Models\\UserModel.cs",
-              "ToolTip": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Models\\UserModel.cs",
-              "RelativeToolTip": "Models\\UserModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T00:18:39.576Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RegistrationModel.cs",
-              "DocumentMoniker": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Models\\RegistrationModel.cs",
-              "RelativeDocumentMoniker": "Models\\RegistrationModel.cs",
-              "ToolTip": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Models\\RegistrationModel.cs",
-              "RelativeToolTip": "Models\\RegistrationModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T00:18:29.093Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RegistrationController.cs",
-              "DocumentMoniker": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Controllers\\RegistrationController.cs",
-              "RelativeDocumentMoniker": "Controllers\\RegistrationController.cs",
-              "ToolTip": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Controllers\\RegistrationController.cs",
-              "RelativeToolTip": "Controllers\\RegistrationController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T00:18:18.43Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SecurityService.cs",
-              "DocumentMoniker": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Services\\SecurityService.cs",
-              "RelativeDocumentMoniker": "Services\\SecurityService.cs",
-              "ToolTip": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Services\\SecurityService.cs",
-              "RelativeToolTip": "Services\\SecurityService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T02:12:21.752Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\austi\\OneDrive\\Desktop\\CLC-Project-CST-350\\CLCProject\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "Controllers\\LoginController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T02:00:55.334Z"
             }
           ]
         }

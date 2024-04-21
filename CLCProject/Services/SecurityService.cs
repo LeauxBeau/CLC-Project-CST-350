@@ -1,15 +1,22 @@
 ﻿using CLCProject.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CLCProject.Services
 {
     public class SecurityService
     {
-        SecurityDAO securityDAO = new SecurityDAO();
+        private readonly SecurityDAO _securityDAO;
 
-            public bool IsValid(UserModel user)
-            {
-                return securityDAO.FindUserByNameAndPassword(user);
-            }
+        public SecurityService(SecurityDAO securityDAO)
+        {
+            _securityDAO = securityDAO;
+        }
+
+        public bool IsValid(UserModel user)
+        {
+            return _securityDAO.FindUserByNameAndPassword(user);
+        }
     }
 }
 
