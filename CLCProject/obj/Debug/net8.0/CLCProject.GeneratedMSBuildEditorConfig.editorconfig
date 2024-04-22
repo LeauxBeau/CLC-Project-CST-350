@@ -26,10 +26,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\jscap\Documents\GitHub\CLC-Project-CST-350\CLCProject
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/jscap/Documents/GitHub/CLC-Project-CST-350/CLCProject/Views/Game/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/jscap/Documents/GitHub/CLC-Project-CST-350/CLCProject/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -48,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/jscap/Documents/GitHub/CLC-Project-CST-350/CLCProject/Views/Login/LoginSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW5TdWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jscap/Documents/GitHub/CLC-Project-CST-350/CLCProject/Views/Minesweeper/Minesweeper.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWluZXN3ZWVwZXJcTWluZXN3ZWVwZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/jscap/Documents/GitHub/CLC-Project-CST-350/CLCProject/Views/Registration/Index.cshtml]

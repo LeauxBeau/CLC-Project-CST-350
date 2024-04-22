@@ -13,6 +13,22 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\jscap\\Documents\\GitHub\\CLC-Project-CST-350\\CLCProject\\wwwroot\\img\\BlackButton.png",
+      "PackagePath": "staticwebassets\\img\\BlackButton.png"
+    },
+    {
+      "Id": "C:\\Users\\jscap\\Documents\\GitHub\\CLC-Project-CST-350\\CLCProject\\wwwroot\\img\\BlueButton.png",
+      "PackagePath": "staticwebassets\\img\\BlueButton.png"
+    },
+    {
+      "Id": "C:\\Users\\jscap\\Documents\\GitHub\\CLC-Project-CST-350\\CLCProject\\wwwroot\\img\\PurpleButton.png",
+      "PackagePath": "staticwebassets\\img\\PurpleButton.png"
+    },
+    {
+      "Id": "C:\\Users\\jscap\\Documents\\GitHub\\CLC-Project-CST-350\\CLCProject\\wwwroot\\img\\RedButton.png",
+      "PackagePath": "staticwebassets\\img\\RedButton.png"
+    },
+    {
       "Id": "C:\\Users\\jscap\\Documents\\GitHub\\CLC-Project-CST-350\\CLCProject\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
