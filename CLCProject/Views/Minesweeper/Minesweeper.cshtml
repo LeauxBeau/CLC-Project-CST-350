@@ -6,21 +6,31 @@
     <title>Minesweeper</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <style>
+
+        .scoreboard-container,
+        .minesweeper-container,
+        .rules-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+
         .grid-container {
             display: grid;
             grid-template-columns: repeat(10, 30px);
             grid-gap: 1px;
             border: 1px solid #ccc;
             width: 310px;
-            height: 310px;
+            height: 400px;
         }
 
         .cell {
             width: 30px;
-            height: 30px;
+            height: 39px;
             text-align: center;
             vertical-align: middle;
-            line-height: 30px;
+            line-height: 40px;
             cursor: pointer;
             border: 1px solid black;
         }
@@ -36,6 +46,11 @@
         body {
             background-color: lightskyblue;
             font-family: Arial, sans-serif;
+        }
+
+        .neighboring-mines {
+            color: blue;
+            font-weight: bold;
         }
 
         .footer {
@@ -105,51 +120,77 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="row justify-content-center game-container">
-            <div class="col-md-4">
-                <div class="scoreboard">
-                    <h4 class="text-center">Scoreboard</h4>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Player</th>
-                                <th>Score</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Player 1</td>
-                                <td>100</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Player 2</td>
-                                <td>90</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Player 3</td>
-                                <td>80</td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <div class="container mt-5">
+        <!-- Added top margin -->
+        <div class="row justify-content-between">
+            <div class="col-md-4 mb-4 order-1">
+                <div class="scoreboard-container">
+                    <div class="scoreboard">
+                        <h4 class="text-center">Scoreboard</h4>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Player</th>
+                                    <th>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Player 1</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Player 2</td>
+                                    <td>90</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Player 3</td>
+                                    <td>80</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="grid-container">
-                    @for (var i = 0; i < Model.Count; i++)
-                    {
-                        <div class="cell @(Model[i].IsRevealed ? "revealed" : "") @(Model[i].IsMine ? "mine" : "")"
-                             onclick="revealCell(@i)">
-                            @if (Model[i].IsRevealed && !Model[i].IsMine)
-                            {
-                                @Model[i].NeighboringMines
-                            }
-                        </div>
-                    }
+            <div class="col-md-4 mb-4 order-2">
+                <div class="minesweeper-container">
+                    <div class="grid-container">
+                        @for (var i = 0; i < Model.Count; i++)
+                        {
+                            <div class="cell @(Model[i].IsRevealed ? "revealed" : "")"
+                                 data-mine="@Model[i].IsMine.ToString().ToLower()"
+                                 onclick="if (!this.classList.contains('revealed')) revealCell(@i)">
+                                @if (Model[i].IsRevealed && !Model[i].IsMine && Model[i].NeighboringMines > 0)
+                                {
+                                    <span class="neighboring-mines">@Model[i].NeighboringMines</span>
+                                }
+                            </div>
+                        }
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-3">
+                        <button class="btn btn-primary" onclick="resetBoard()">Reset Board</button>
+                        <button class="btn btn-primary" onclick="displayAllCells()">Display Cells</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 order-3">
+                <div class="rules-container">
+                    <div class="scoreboard">
+                        <h4 class="text-center">Rules</h4>
+                        <ul>
+                            <li>Click on a cell to reveal it.</li>
+                            <li>If the cell contains a mine, the game is over.</li>
+                            <li>If the cell is empty, it will reveal neighboring cells.</li>
+                            <li>The numbers indicate how many mines are adjacent to that cell.</li>
+                            <li>Use logic to determine which cells contain mines and mark them with a flag.</li>
+                            <li>Win by revealing all cells that do not contain mines.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -158,10 +199,67 @@
     <div id="success-message" style="display: none;">Congratulations! You have succeeded!</div>
 
     <script>
+        var displayMines = false;
+
+        function resetBoard() {
+            window.location.href = '@Url.Action("Index", "Minesweeper")';
+        }
+
         function revealCell(cellIndex) {
             var cell = document.getElementsByClassName("cell")[cellIndex];
+            if (cell.textContent.trim() !== "") {
+                return;
+            }
             cell.classList.add("revealed");
+
+            fetch('@Url.Action("HandleCellClick", "Minesweeper")', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ cellIndex: cellIndex })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.gameOver) {
+                        alert("Game Over! You clicked on a mine!");
+                        resetBoard()
+                    } else {
+                        data.cells.forEach((cellData, index) => {
+                            var cellElement = document.getElementsByClassName("cell")[index];
+                            if (cellData.isRevealed && !cellData.isMine && cellData.neighboringMines > 0) {
+                                cellElement.textContent = cellData.neighboringMines;
+                            }
+                            if (cellData.isMine) {
+                                cellElement.classList.add("mine");
+                            }
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
         }
+
+        function displayAllCells() {
+            var cells = document.getElementsByClassName("cell");
+            for (var i = 0; i < cells.length; i++) {
+                cells[i].classList.add("revealed");
+            }
+            displayMines = true;
+        }
+
+        document.querySelectorAll('.cell').forEach(item => {
+            item.addEventListener('click', event => {
+                if (displayMines && item.classList.contains('mine')) {
+                    item.classList.add('revealed');
+                    alert("Game Over! You clicked on a mine!");
+                    resetBoard();
+                } else {
+                    revealCell(Array.prototype.indexOf.call(item.parentElement.children, item));
+                }
+            });
+        });
     </script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-pzjw8f+HoX8Ktv5z+Po0iSfka0V6twP1Au5gE2FndcwY6pYFq3e6e+p2EKzI1zzi" crossorigin="anonymous"></script>

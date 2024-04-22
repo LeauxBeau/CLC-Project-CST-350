@@ -9,10 +9,9 @@
 
         public CellModel()
         {
-            IsMine = false;
             IsFlagged = false;
             IsRevealed = false;
-            NeighboringMines = 0;
+            NeighboringMines = 10;
         }
     }
 }
