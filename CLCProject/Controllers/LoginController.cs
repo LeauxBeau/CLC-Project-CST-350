@@ -1,6 +1,7 @@
 ﻿using CLCProject.Models;
 using CLCProject.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
 namespace CLCProject.Controllers
 {
@@ -15,7 +16,7 @@ namespace CLCProject.Controllers
 
         public IActionResult Index()
         {
-            return View(); // Assuming there's a corresponding view called Index.cshtml
+            return View();
         }
 
         [HttpPost]
@@ -23,6 +24,7 @@ namespace CLCProject.Controllers
         {
             if (_securityService.IsValid(user))
             {
+                HttpContext.Session.SetString("UserName", user.UserName);
                 return RedirectToAction("LoginSuccess");
             }
             else
@@ -39,6 +41,12 @@ namespace CLCProject.Controllers
         public IActionResult LoginFailure()
         {
             return View();
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

@@ -3,144 +3,153 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 
-namespace CLCProject.Controllers
+public class MinesweeperController : Controller
 {
-    public class MinesweeperController : Controller
+    static List<CellModel> cells = new List<CellModel>();
+    Random random = new Random();
+    const int GRID_SIZE = 10;
+    const int MINE_COUNT = 10;
+
+    public ActionResult Index()
     {
-        static List<CellModel> cells = new List<CellModel>();
-        Random random = new Random();
-        const int GRID_SIZE = 10;
-        const int MINE_COUNT = 10;
+        InitializeGrid();
+        PlaceMines();
+        CalculateNeighboringMines();
 
-        public ActionResult Index()
+        return View("Minesweeper", cells);
+    }
+
+    [HttpPost]
+    public IActionResult HandleCellClick(int cellIndex)
+    {
+        var clickedCell = cells[cellIndex];
+
+        if (clickedCell.IsMine)
         {
-            InitializeGrid();
-            PlaceMines();
-            CalculateNeighboringMines();
-
-            return View("Minesweeper", cells);
+            return Json(new { gameOver = true });
         }
-
-        [HttpPost]
-        public IActionResult HandleCellClick(int cellIndex)
+        else
         {
-            var clickedCell = cells[cellIndex];
+            RevealEmptyCells(cellIndex);
 
-            if (clickedCell.IsMine)
+            if (CheckGameWon())
             {
                 return Json(new { gameOver = true });
             }
             else
             {
-                RevealEmptyCells(cellIndex);
-
-                if (CheckGameWon())
-                {
-                    return Json(new { gameOver = true });
-                }
-                else
-                {
-                    return Json(new { gameOver = false, cells = cells });
-                }
+                return Json(new { gameOver = false, cells = cells });
             }
         }
+    }
+
+    [HttpGet]
+    public IActionResult ResetBoard()
+    {
+        InitializeGrid();
+        PlaceMines();
+        CalculateNeighboringMines();
+
+        var dateTimeNow = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+        return Json(new { cells = cells, dateTime = dateTimeNow });
+    }
 
 
-        private void InitializeGrid()
+    private void InitializeGrid()
+    {
+        cells = new List<CellModel>();
+
+        for (int i = 0; i < GRID_SIZE * GRID_SIZE; i++)
         {
-            cells = new List<CellModel>();
+            cells.Add(new CellModel());
+        }
+    }
 
-            for (int i = 0; i < GRID_SIZE * GRID_SIZE; i++)
-            {
-                cells.Add(new CellModel());
-            }
+    private void PlaceMines()
+    {
+        HashSet<int> mineIndices = new HashSet<int>();
+
+        while (mineIndices.Count < MINE_COUNT)
+        {
+            int randomIndex = random.Next(GRID_SIZE * GRID_SIZE);
+            mineIndices.Add(randomIndex);
         }
 
-        private void PlaceMines()
+        foreach (int index in mineIndices)
         {
-            HashSet<int> mineIndices = new HashSet<int>();
-
-            while (mineIndices.Count < MINE_COUNT)
-            {
-                int randomIndex = random.Next(GRID_SIZE * GRID_SIZE);
-                mineIndices.Add(randomIndex);
-            }
-
-            foreach (int index in mineIndices)
-            {
-                cells[index].IsMine = true;
-            }
+            cells[index].IsMine = true;
         }
+    }
 
-        private void CalculateNeighboringMines()
+    private void CalculateNeighboringMines()
+    {
+        for (int i = 0; i < cells.Count; i++)
         {
-            for (int i = 0; i < cells.Count; i++)
+            if (!cells[i].IsMine)
             {
-                if (!cells[i].IsMine)
+                int count = 0;
+                foreach (var neighborIndex in GetNeighborIndices(i))
                 {
-                    int count = 0;
-                    foreach (var neighborIndex in GetNeighborIndices(i))
+                    if (neighborIndex >= 0 && neighborIndex < cells.Count && cells[neighborIndex].IsMine)
                     {
-                        if (neighborIndex >= 0 && neighborIndex < cells.Count && cells[neighborIndex].IsMine)
-                        {
-                            count++;
-                        }
-                    }
-                    cells[i].NeighboringMines = count;
-                }
-            }
-        }
-
-        private IEnumerable<int> GetNeighborIndices(int index)
-        {
-            int row = index / GRID_SIZE;
-            int col = index % GRID_SIZE;
-
-            for (int i = row - 1; i <= row + 1; i++)
-            {
-                for (int j = col - 1; j <= col + 1; j++)
-                {
-                    if (i >= 0 && i < GRID_SIZE && j >= 0 && j < GRID_SIZE && (i != row || j != col))
-                    {
-                        yield return i * GRID_SIZE + j;
+                        count++;
                     }
                 }
+                cells[i].NeighboringMines = count;
             }
         }
+    }
 
-        private void RevealEmptyCells(int cellIndex)
+    private IEnumerable<int> GetNeighborIndices(int index)
+    {
+        int row = index / GRID_SIZE;
+        int col = index % GRID_SIZE;
+
+        for (int i = row - 1; i <= row + 1; i++)
         {
-            var queue = new Queue<int>();
-            queue.Enqueue(cellIndex);
-
-            while (queue.Count > 0)
+            for (int j = col - 1; j <= col + 1; j++)
             {
-                var currentIndex = queue.Dequeue();
-                cells[currentIndex].IsRevealed = true;
-
-                if (cells[currentIndex].NeighboringMines == 0)
+                if (i >= 0 && i < GRID_SIZE && j >= 0 && j < GRID_SIZE && (i != row || j != col))
                 {
-                    foreach (var neighborIndex in GetNeighborIndices(currentIndex))
+                    yield return i * GRID_SIZE + j;
+                }
+            }
+        }
+    }
+
+    private void RevealEmptyCells(int cellIndex)
+    {
+        var queue = new Queue<int>();
+        queue.Enqueue(cellIndex);
+
+        while (queue.Count > 0)
+        {
+            var currentIndex = queue.Dequeue();
+            cells[currentIndex].IsRevealed = true;
+
+            if (cells[currentIndex].NeighboringMines == 0)
+            {
+                foreach (var neighborIndex in GetNeighborIndices(currentIndex))
+                {
+                    if (!cells[neighborIndex].IsRevealed && !cells[neighborIndex].IsMine)
                     {
-                        if (!cells[neighborIndex].IsRevealed && !cells[neighborIndex].IsMine)
-                        {
-                            queue.Enqueue(neighborIndex);
-                        }
+                        queue.Enqueue(neighborIndex);
                     }
                 }
             }
         }
+    }
 
-        private bool CheckGameWon()
+    private bool CheckGameWon()
+    {
+        foreach (var cell in cells)
         {
-            foreach (var cell in cells)
+            if (!cell.IsRevealed && !cell.IsMine)
             {
-                if (!cell.IsRevealed && !cell.IsMine)
-                {
-                    return false;
-                }
+                return false;
             }
-            return true;
         }
+        return true;
     }
 }

@@ -6,7 +6,6 @@
     <title>Minesweeper</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <style>
-
         .scoreboard-container,
         .minesweeper-container,
         .rules-container {
@@ -158,7 +157,8 @@
             </div>
             <div class="col-md-4 mb-4 order-2">
                 <div class="minesweeper-container">
-                    <div class="grid-container">
+                    <div id="date-time" class="text-center mb-3"></div>
+                    <div id="grid-container" class="grid-container">
                         @for (var i = 0; i < Model.Count; i++)
                         {
                             <div class="cell @(Model[i].IsRevealed ? "revealed" : "")"
@@ -202,7 +202,46 @@
         var displayMines = false;
 
         function resetBoard() {
-            window.location.href = '@Url.Action("Index", "Minesweeper")';
+            fetch('@Url.Action("ResetBoard", "Minesweeper")', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    updateBoard(data.cells);
+                    updateDateTime(data.dateTime);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        function updateBoard(cells) {
+            const gridContainer = document.getElementById("grid-container");
+            gridContainer.innerHTML = '';
+            cells.forEach((cell, index) => {
+                const cellElement = document.createElement("div");
+                cellElement.className = "cell" + (cell.isRevealed ? " revealed" : "");
+                cellElement.dataset.mine = cell.isMine.toString().toLowerCase();
+                cellElement.onclick = function () {
+                    if (!cellElement.classList.contains('revealed')) {
+                        revealCell(index);
+                    }
+                };
+                if (cell.isRevealed && !cell.isMine && cell.neighboringMines > 0) {
+                    const spanElement = document.createElement("span");
+                    spanElement.className = "neighboring-mines";
+                    spanElement.textContent = cell.neighboringMines;
+                    cellElement.appendChild(spanElement);
+                }
+                gridContainer.appendChild(cellElement);
+            });
+        }
+
+        function updateDateTime(dateTime) {
+            document.getElementById('date-time').innerText = dateTime;
         }
 
         function revealCell(cellIndex) {
@@ -210,7 +249,6 @@
             if (cell.textContent.trim() !== "") {
                 return;
             }
-            cell.classList.add("revealed");
 
             fetch('@Url.Action("HandleCellClick", "Minesweeper")', {
                 method: 'POST',
@@ -222,18 +260,11 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.gameOver) {
-                        alert("Game Over! You clicked on a mine!");
-                        resetBoard()
+                        if (confirm("Game Over! You hit a mine. Do you want to reset the board?")) {
+                            resetBoard();
+                        }
                     } else {
-                        data.cells.forEach((cellData, index) => {
-                            var cellElement = document.getElementsByClassName("cell")[index];
-                            if (cellData.isRevealed && !cellData.isMine && cellData.neighboringMines > 0) {
-                                cellElement.textContent = cellData.neighboringMines;
-                            }
-                            if (cellData.isMine) {
-                                cellElement.classList.add("mine");
-                            }
-                        });
+                        updateBoard(data.cells);
                     }
                 })
                 .catch(error => {
@@ -260,6 +291,25 @@
                 }
             });
         });
+
+        function displayDateTime() {
+            fetch('@Url.Action("ResetBoard", "Minesweeper")', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    updateDateTime(data.dateTime);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        displayDateTime();
+
     </script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-pzjw8f+HoX8Ktv5z+Po0iSfka0V6twP1Au5gE2FndcwY6pYFq3e6e+p2EKzI1zzi" crossorigin="anonymous"></script>
