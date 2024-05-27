@@ -1,10 +1,12 @@
 ﻿using CLCProject.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 using System;
 using System.Collections.Generic;
 
 public class MinesweeperController : Controller
 {
+    const string SessionKey = "GameData";
     static List<CellModel> cells = new List<CellModel>();
     Random random = new Random();
     const int GRID_SIZE = 10;
@@ -55,6 +57,30 @@ public class MinesweeperController : Controller
         return Json(new { cells = cells, dateTime = dateTimeNow });
     }
 
+    [HttpPost]
+    public IActionResult SaveGame()
+    {
+        var gameData = new GameSaveData { Cells = cells };
+        var gameDataJson = JsonSerializer.Serialize(gameData);
+
+        HttpContext.Session.SetString(SessionKey, gameDataJson);
+
+        return Json(new { message = "Game saved successfully!" });
+    }
+
+    [HttpGet]
+    public IActionResult LoadGame()
+    {
+        var gameDataJson = HttpContext.Session.GetString(SessionKey);
+
+        if (gameDataJson != null)
+        {
+            var gameData = JsonSerializer.Deserialize<GameSaveData>(gameDataJson);
+            cells = gameData.Cells;
+        }
+
+        return Json(new { cells = cells, dateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") });
+    }
 
     private void InitializeGrid()
     {
